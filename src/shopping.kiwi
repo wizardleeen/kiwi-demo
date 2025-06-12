@@ -7,6 +7,7 @@ class Product(
     var price: Money,
     @Label("库存")
     var stock: int,
+    @Label("类目")
     var category: Category
 ) {
 
