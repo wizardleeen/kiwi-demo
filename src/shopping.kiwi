@@ -63,6 +63,25 @@ class Product(
 
 }
 
+@Bean
+class ProductService {
+
+    fn batchCreate(namePrefix: string, count: int) {
+        for (i in 0...count) {
+            Product(
+                namePrefix + (i + 1),
+                Money(100, Currency.YUAN),
+                100,
+                1.0f,
+                Category.OTHER,
+                0
+            )
+        }
+    }
+
+}
+
+
 @Label("优惠券")
 class Coupon(
     @Summary
