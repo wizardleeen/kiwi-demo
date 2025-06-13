@@ -7,12 +7,41 @@ class Product(
     var price: Money,
     @Label("库存")
     var stock: int,
+    @Label("重量")
+    var weight: float?,
     @Label("类目")
-    var category: Category
+    var category: Category,
+    @Label("版本")
+    var version: long
 ) {
 
     priv fn __category__() -> Category {
         return Category.OTHER
+    }
+
+    @Label("更新名称")
+    fn updateName(name: string) {
+        this.name = name
+    }
+
+    @Label("更新价格")
+    fn updatePrice(price: Money) {
+        this.price = price
+    }
+
+    @Label("更新库存")
+    fn updateStock(stock: int) {
+        this.stock = stock
+    }
+
+    @Label("更新重量")
+    fn updateWeight(weight: float?) {
+        this.weight = weight
+    }
+
+    @Label("更新版本")
+    fn updateVersion(version: long) {
+        this.version = version
     }
 
     @Label("扣减库存")
